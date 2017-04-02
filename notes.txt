@@ -1,0 +1,38 @@
+Progressive Backup Path
+filewin:/C:/Program Files/FileMaker/FileMaker Server/Data/ProgBackups/
+
+Open ports on FMS
+443, 80, 2399, 5003
+
+Install standby server with same config as primary.
+-Operating system (Windows or OS X) and operating system version
+-FileMaker Server version
+-FileMaker Server installation folder
+-FileMaker Server user account name
+-FileMaker Server login credentials
+-Physical memory size available on the machine (RAM size)
+-Deployment configuration (one-machine or two-machine deployment)
+-Ports for web connections (HTTP) and secure web connections (HTTPS)
+-Whether ODBC/JDBC is enabled
+-Whether web publishing is enabled
+-Folders containing files for container fields that store data externally
+-Default database folder path
+-Additional database folder paths
+-Local volumes that contain databases
+-Progressive backup folder path
+-The setting Enable progressive backups must be enabled on both the primary server and the prospective standby server
+-The FileMaker Server user account must have write permission to the parent folder of the progressive backup folder path
+
+Closed database on both primary and standby servers.
+Manually copy the contents of the scripts folder from the primary server tandby server:
+-In a Windows default installation, copy the \Program Files\FileMaker\FileMaker Server\Data\Scripts\ folder.
+-On OS X, copy the /Library/FileMaker Server/Data/Scripts/ folder.
+
+Run following from elev cmd on primary server:
+fmsadmin standby connect vrt02
+fmsadmin standby update
+
+
+
+Run following from elev cmd on standby server:
+fmsadmin standby accept 23203235

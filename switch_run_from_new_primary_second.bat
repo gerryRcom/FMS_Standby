@@ -1,0 +1,2 @@
+fmsadmin resume
+pause

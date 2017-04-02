@@ -1,0 +1,2 @@
+fmsadmin standby disconnect
+pause
