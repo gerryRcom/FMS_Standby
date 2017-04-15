@@ -36,3 +36,12 @@ fmsadmin standby update
 
 Run following from elev cmd on standby server:
 fmsadmin standby accept 23203235
+
+
+Domain Authentication
+
+1 - Create required groups in AD
+2 - Add users to respective groups
+3 - In file security add external authentication for each group (namine group exactly the same)
+4 - In privilege set for each group, enable access via Filemaker network on files
+5 - Ensure authentication order is as required
